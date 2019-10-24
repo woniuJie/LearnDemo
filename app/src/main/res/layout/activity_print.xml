@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".print.PrintActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用PrintManager进行打印"
+        android:onClick="onPrintManagerClick"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打印图片"
+        android:onClick="onPrintImage"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打印html文档"
+        android:onClick="onPrintHtml"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="菜鸟打印"
+        android:onClick="onCainiao"
+        /><Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WiFi打印"
+        android:onClick="onWifiPrint"
+        />
+
+</LinearLayout>

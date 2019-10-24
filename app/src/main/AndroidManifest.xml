@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zsj.learndemo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 振动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".network.NetworkActivity"></activity>
+        <activity android:name=".hencode.HenCodeViewActivity" />
+        <activity android:name=".aes.AESActivity" />
+        <activity android:name=".handler.HandlerActivity" />
+        <activity android:name=".download_video.DownLoadVideoActivity" />
+        <activity android:name=".zhuangshi.ZhuangshiActivity" />
+        <activity android:name=".thread.ThreadActivity" />
+        <activity android:name=".broadcastreceiver.BroadCastActivity" />
+        <activity android:name=".proxy.ProxyActivity" />
+        <activity android:name=".contentpro.ContentProviderActivity" />
+        <activity android:name=".intentService.service.MyServiceActivity" />
+        <activity android:name=".ortherAppCacheSize.OrtherAppCacheSizeActivity" />
+        <activity android:name=".fanshe.FanSheActivity" />
+        <activity android:name=".oom.OOMActivity" />
+        <activity android:name=".image.ImageSelectActivity" />
+        <activity android:name=".game2048.Game2048Activity" />
+        <activity android:name=".wuziqi.WuziqiActivity" />
+        <activity android:name=".markdown.MarkdownActivity" />
+        <activity android:name=".intentService.myintent.MyIntentServiceActivity" />
+        <activity android:name=".location.LocationActivity" />
+        <activity android:name=".animator.ZoomActivity" />
+        <activity android:name=".animator.AnimatorActivity" />
+        <activity android:name=".bitmap.BitmapActivity" />
+        <activity android:name=".calandarview.CalandarViewActivity" />
+        <activity android:name=".share.ShareFileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="image/*" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".duomeiti.DuoMeiTiActivity" />
+        <activity android:name=".share.ShareActivity" />
+        <activity
+            android:name=".nfc.NFCActivity"
+            android:label="Android Beam Viewer">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".cainiao.CainiaoActivity" />
+        <activity android:name=".zxingimage.ZxingImageActivity" />
+        <activity android:name=".print.PrintActivity" />
+        <activity android:name=".zxing.ZxingActivity" />
+        <activity android:name=".calandar.CalendarActivity" />
+        <activity android:name=".shot.ShotActivity" />
+        <activity android:name=".web.WebActivity" />
+        <activity android:name=".snap.SnapActivity" />
+        <activity android:name=".ping.PingActivity" />
+        <activity android:name=".view.ViewActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- 下面所设置的data值需要和html端对应 -->
+                <!-- 在data里设置了 scheme和host，则该Activity可以接收和处理类似于 "test://article/attr"的链接 -->
+                <data android:scheme="zsj" />
+            </intent-filter>
+        </activity>
+        <!--
+            The attribute "android:exported" must be set to "false" to restrict this content
+            provider to its own app. Otherwise, all apps could access it.
+        -->
+        <service
+            android:name=".intentService.myintent.MyIntentService"
+            android:exported="false" />
+
+        <receiver android:name=".duanxin.SmsReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver> <!-- <service -->
+        <!-- android:name=".aidl.AIDLService" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.zsj.learndemo" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
+        <!-- <service -->
+        <!-- android:name=".aidl.BinderPoolService" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.zsj.bindpoolservice" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
+        <!-- <service -->
+        <!-- android:name=".intentService.service.MyService" -->
+        <!-- android:exported="false" /> -->
+        <service android:name=".download_video.DownloadVideoService" />
+    </application>
+
+</manifest>

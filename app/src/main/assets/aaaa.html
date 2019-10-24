@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<div style="width:200px;height:200px;background:lightpink;margin: 50px;outline:solid 6px #000;"></div>
+<a href="cumart://send?phone=6285591180206">呼起whatsapp</a>
+</body>
+
+
+<script>
+  var list = new Set();
+  function set(target, key, value, receiver) {
+    Reflect.set(target, key, value);
+    list.forEach(f => f());
+  }
+  const observe = fn => list.add(fn);
+
+  observe(function () {
+    console.log('ob');
+  })
+  const p = o => {
+    return new Proxy(o, {set})
+  }
+  var item = p({});
+  item.a = '1';
+
+  var x = Reflect.construct(XMLHttpRequest, []);
+  var k = '&asdf=';
+  var v = '%sdfaf29';
+  var s = encodeURIComponent(k) + '=' + encodeURIComponent(v);
+  x.open('post', '/');
+  x.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+  x.send(s);
+</script>
+</html>

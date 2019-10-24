@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wzq="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".wuziqi.WuziqiActivity">
+
+    <com.zsj.learndemo.wuziqi.WuziqiPanel
+        android:id="@+id/id_wuziqi"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        wzq:panel_background="@mipmap/bg"
+        wzq:panel_line_color="#C00"
+        wzq:white_piece_img="@mipmap/stone_w2"
+        wzq:black_piece_img="@mipmap/stone_b1"
+        wzq:max_count_line="14"
+        wzq:max_win_count_piece="5"/>
+
+</LinearLayout>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id-ID">
+	<head>
+		<meta charset="utf-8">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<meta property="og:type" content="article" />
+		<meta property="og:title" id="facebook-title" content="CuMart" />
+		<meta property="og:description" id="facebook-description" content="Welcome to CuMart" />
+		<meta property="og:image" id="facebook-image" content="https://m.cumart.net/logo_1.png" />
+		<meta property="og:image:width" content="1024" />
+		<meta property="og:image:height" content="1024" />
+<!--  预连接cdn -->
+		<link rel="preconnect" href="https://crossec-cdn.cumart.net" crossorigin>
+<!--  dns预渲染首页接口，订单接口，商品接口		-->
+		<link rel="dns-prefetch" href="https://product-api.cumart.net">
+		<link rel="dns-prefetch" href="https://order-api.cumart.net">
+		<link rel="dns-prefetch" href="https://user-api.cumart.net">
+
+
+<!--		<link rel="prefetch" href="https://www-cdn.whatsapp.net/js/v4/jquery-1.12.2.min.js">-->
+		<!-- 资源预加载导致同域名的请求限制	-->
+		<link rel="prefetch" href="//crossec-cdn.cumart.net/project/ShopIn/logo/logo_1.jpg?x-oss-process=image/format,webp/quality,q_100">
+		<link rel="prefetch" href="//crossec-cdn.cumart.net/project/ShopIn/logo/logo_2.jpg?x-oss-process=image/format,webp/quality,q_100">
+		<link rel="prefetch" href="//crossec-cdn.cumart.net/project/ShopIn/logo/logo_3.jpg?x-oss-process=image/format,webp/quality,q_100">
+		<link rel="prefetch" href="//crossec-cdn.cumart.net/project/app/img/new-banner.jpg?x-oss-process=image/format,webp/quality,q_100">
+		<link rel="prefetch" href="//crossec-cdn.cumart.net/project/app/img/newPop3.png?x-oss-process=image/format,webp">
+<!--	新人专区图	-->
+		<link rel="prefetch" href="//crossec-cdn.cumart.net/project/app/img/new-user-banner.jpg?x-oss-process=image/format,webp">
+		<link rel="prefetch" href="/imgs/back.png">
+		<link rel="prefetch" href="/imgs/cumart-logo.png">
+		<link rel="prefetch" href="/img/checked.svg">
+		<link rel="prefetch" href="/img/coupon.svg">
+		<link rel="prefetch" href="/img/check-box.svg">
+		<link rel="prefetch" href="/img/icon.png">
+		<link rel="preload" as="image" href="/img/customer-service2.png">
+<!--		<link rel="preload" as="image" href="/img/index-icon2.png">-->
+<!-- 因为webpack使用多页打包有bug，导致没有preload，这里手写	-->
+<!--		-->
+		<link href=/css/chunk-common.css rel=preload as=style>
+		<link href=/css/chunk-vendors.css rel=preload as=style>
+		<link href=/css/index.css rel=preload as=style>
+		<link href=/js/chunk-common.js rel=preload as=script>
+		<link href=/js/chunk-vendors.js rel=preload as=script>
+		<link href=/js/index.js rel=preload as=script>
+
+		<!-- rem和gtag统计 -->
+<!--		<script src="https://crossec-cdn.cumart.net/project/app/js/gtag_rem.min.js"></script>-->
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script defer src="https://www.googletagmanager.com/gtag/js?id=UA-140796811-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-140796811-1');
+			(function(){var e,n,i=window.navigator.userAgent.match(/iphone/i),t=parseFloat(window.getComputedStyle(document.documentElement).fontSize)/16,d=screen.width>0&&(window.innerWidth>=screen.width||0===window.innerWidth)?screen.width:window.innerWidth;let w=screen.height>0&&(window.innerHeight>=screen.height||0===window.innerHeight)?screen.height:window.innerHeight;e=window.devicePixelRatio?window.devicePixelRatio:i?d>818?3:d>480?2:1:1,i&&(d=screen.width,w=screen.height),d>w&&(d=w),n=(n=d>1080?144:d/7.5)>32?n:32,window.screenWidth_=d,document.documentElement.dataset.dpr=e,document.documentElement.style.fontSize=n/t+"px"}());
+		</script>
+		<!--<link rel="icon" href="<%= BASE_URL %>cumart.ico">-->
+	</head>
+	<body style="-webkit-overflow-scrolling:touch;">
+		<noscript>
+      <strong>We're sorry but this page doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+		<div id="app">
+<!--			<link rel="stylesheet" href="https://crossec-cdn.cumart.net/project/app/css/common_loading.min.css">-->
+			<style>
+				p{margin:0}#main-loading{position:fixed;top:0;left:0;right:0;bottom:0;z-index:10000;overflow:hidden;height:100%;background:#fff}#loading-box{transform:translateZ(0) rotate(0);margin:4.72222222rem auto 0;width:3.47222222rem;height:2.43055556rem;position:relative}#loading_box_item{animation:rotate 12s linear infinite;height:100%;}#loading-box .bg{height:100%;background:url('//m.cumart.net/imgs/loading/loading-logo.png') center / 1.04166667rem auto no-repeat;animation:inherit;animation-direction:reverse}#loading-title{text-align:center;font-family:ComicSansMS, sans-serif;font-size:.32638889rem;line-height:.41666667rem;letter-spacing:-0.00694444rem;color:#d41c1c}.item{position:absolute;top:50%;left:50%;width:.13888889rem;height:.13888889rem;border-radius:50%;background:#de9086;animation:bubble 2400ms linear infinite}.item:nth-child(1){transform:translate(-50%, -50%) rotate(0deg) translateY(0.83333333rem);animation-delay:0ms}.item:nth-child(2){transform:translate(-50%, -50%) rotate(30deg) translateY(0.83333333rem);animation-delay:-200ms}.item:nth-child(3){transform:translate(-50%, -50%) rotate(60deg) translateY(0.83333333rem);animation-delay:-400ms}.item:nth-child(4){transform:translate(-50%, -50%) rotate(90deg) translateY(0.83333333rem);animation-delay:-600ms}.item:nth-child(5){transform:translate(-50%, -50%) rotate(120deg) translateY(0.83333333rem);animation-delay:-800ms}.item:nth-child(6){transform:translate(-50%, -50%) rotate(150deg) translateY(0.83333333rem);animation-delay:-1000ms}.item:nth-child(7){transform:translate(-50%, -50%) rotate(180deg) translateY(0.83333333rem);animation-delay:-1200ms}.item:nth-child(8){transform:translate(-50%, -50%) rotate(210deg) translateY(0.83333333rem);animation-delay:-1400ms}.item:nth-child(9){transform:translate(-50%, -50%) rotate(240deg) translateY(0.83333333rem);animation-delay:-1600ms}.item:nth-child(10){transform:translate(-50%, -50%) rotate(270deg) translateY(0.83333333rem);animation-delay:-1800ms}.item:nth-child(11){transform:translate(-50%, -50%) rotate(300deg) translateY(0.83333333rem);animation-delay:-2000ms}.item:nth-child(12){transform:translate(-50%, -50%) rotate(330deg) translateY(0.83333333rem);animation-delay:-2200ms}@keyframes bubble{25%{width:.27777778rem;height:.27777778rem;background:#c8321e}75%{width:.27777778rem;height:.27777778rem;background:#c8321e}}@keyframes rotate{100%{transform:translateZ(0) rotate(-360deg)}}
+			</style>
+			<script>
+				function _checkCDN() {
+					var cdnList = ['Vue', 'Vuex', 'VueRouter', 'VueI18n', 'VueLazyload', 'Swiper'];
+					var o = {};
+					cdnList.forEach(item => {
+						o[item] = !!window[item]
+					});
+					return o;
+				}
+				function _sendMessage(msgData) {
+					var host = '//m.cumart.net/checkCDN.jpg';
+					var url = host + '?checkCDN=' + JSON.stringify(msgData);
+					var img = new Image();
+					img.src = url;
+				}
+				setTimeout(function () {
+					var loading = document.getElementById('main-loading');
+					// var networkErr = document.createElement('span');
+					// networkErr.innerHTML = 'Network Error';
+					if (loading && loading.getAttribute('name') === 'loading') {
+						loading.parentElement.removeChild(loading);
+						var img = document.getElementById('net_work_error');
+						if (img) img.style.display = 'inline-block';
+						// 判断是cdn错误还是m站错误
+						_sendMessage(_checkCDN())
+					}
+				}, 20000);
+			</script>
+				<div style="text-align:center;margin:60px 20px 40px;">
+					<div style="min-height: 180px">
+						<img id="net_work_error" style="display:none;object-fit:contain" src="/svg/network-error.svg" alt="404">
+					</div>
+					<p style="font-size: 16px">Kesalahan jaringan, silakan coba lagi nanti.</p>
+					<button style="padding:.6em 1.2em;background:lightskyblue;border-radius:6px;border:none;font-size:18px;color:#fefefe;" onclick="location.reload()">Coba lagi</button>
+				</div>
+				<div id="main-loading" name="loading">
+					<div id="loading-box">
+						<div id="loading_box_item">
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+						</div>
+						<div class="bg" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;"></div>
+					</div>
+					<div id="loading-title">
+						<!-- 我们的商品很便宜 -->
+						<p>MEMBERIKAN ANDA</p>
+						<p>BARANG YANG TERMURAH</p>
+					</div>
+				</div>
+    </div>
+		<link rel="stylesheet" href="https://crossec-cdn.cumart.net/project/app/css/swiper.min.css">
+		<!--使用cdn max-age缓存资源-->
+		<script src="https://crossec-cdn.cumart.net/project/app/js/vue.min.js"></script>
+		<script src="https://crossec-cdn.cumart.net/project/app/js/vuex.min.js"></script>
+		<script src="https://crossec-cdn.cumart.net/project/app/js/vue-router.min.js"></script>
+		<script src="https://crossec-cdn.cumart.net/project/app/js/vue-lazyload.min.js"></script>
+		<script src="https://crossec-cdn.cumart.net/project/app/js/vue-i18n.min.js"></script>
+		<script src="https://crossec-cdn.cumart.net/project/app/js/swiper.min.js"></script>
+		<!-- built files will be auto injected -->
+	</body>
+</html>
